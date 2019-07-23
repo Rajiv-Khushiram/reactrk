@@ -1,14 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.scss';
+/*import Notification from './components/ClippathNotification'*/
+import NavigationBar from  './components/Navigationbar'
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-function App() {
-  return (
-<React.Fragment> 
-  <div id="outter">
+  render() {
+    return (
+      <div className="App">
 
-  </div></React.Fragment>
-  );
+      </div>
+    );
+  }
 }
 
 export default App;
