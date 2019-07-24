@@ -43,7 +43,7 @@ class MenuNew extends React.Component {
             visible={this.state.menuVisible}
             icon="labeled"
             vertical
-            inline
+            inline="true"
             inverted
           >
             <Menu.Item>
