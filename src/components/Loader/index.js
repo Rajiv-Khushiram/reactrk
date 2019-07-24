@@ -1,6 +1,6 @@
 import React from "react";
-import "./Loader.css";
-import { loaderStatus } from "./../../Utils/utilities";
+import "./index.css";
+import { loaderStatus } from "../Utils/utilities";
 
 // Loading container having loader respresentation of your choice
 // I used the following loader for this example
@@ -8,8 +8,8 @@ const LoadingContainer = props => {
   return (
     <div className="loader-container">
       <div className="loader">
-        <div className="loader-title">React Loves RxJS</div>
-        <div class="lds-grid">
+        <div className="loader-title">Loading</div>
+        <div className="lds-grid">
           <div />
           <div />
           <div />
@@ -29,7 +29,7 @@ class Loader extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loadingStatus: false //Loading state for component
+      loadingStatus: true //Loading state for component
     };
   }
 

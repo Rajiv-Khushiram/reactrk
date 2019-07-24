@@ -1,6 +1,5 @@
 body {
-    background: green;
-    margin: 0;
+    background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/debut_light.png");    margin: 0;
     height: 100vh;
     display: grid;
     font-family: 'Roboto', sans-serif;
