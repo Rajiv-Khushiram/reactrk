@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import { render } from "react-dom";
 import { Header, Icon, Image, Menu, Sidebar, Segment } from "semantic-ui-react";
 
-import SidebarMenu from "./Sidebar";
 
 class MenuNew extends React.Component {
   constructor(props) {
