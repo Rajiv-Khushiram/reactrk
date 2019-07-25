@@ -1,0 +1,7 @@
+#bg {
+    width:100%;
+    min-height:700px;
+    background-image: url('https://www.eenvoud.nl/wp-content/uploads/2017/05/website_bg.png');
+    background-size: cover;
+    background-attachment:fixed;
+}
