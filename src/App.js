@@ -46,8 +46,7 @@ class App extends React.Component {
     return (
       
         <React.Fragment>
-        <Loader />
-        <HomepageLayout />
+   
              
         </React.Fragment>
 

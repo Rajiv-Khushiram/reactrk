@@ -3,10 +3,12 @@ import React, { Component, createRef } from 'react'
 import NavigationBar from  '../Navigationbar' 
 import NavBar from '../Navbar'
 import MenuNew from "../Menu"
+import {  } from 'semantic-ui-react'
 import './index.css';
 
 
 import {
+  Rating,
     Label,
     Card,
   Button, 
@@ -271,6 +273,7 @@ class HomepageLayout extends Component {
         return (  <ResponsiveContainer>  
     <Segment style={{ padding: '8em 0em' }} vertical>
       <Container text>
+      <Rating icon='star' defaultRating={3} maxRating={4} />
         <Header as='h3' style={{ fontSize: '2em' }}>
           Breaking The Grid, Grabs Your Attention
         </Header>
