@@ -121,15 +121,7 @@ fetch('https://cerealkillers-api.herokuapp.com/api/v1/assignment/5d3c893e40153fa
               <Menu.Item as="a">Analytics</Menu.Item>
               <Menu.Item as="a">Export</Menu.Item>
               <Divider hidden />
-              <Menu.Item as="a">Nav item</Menu.Item>
-              <Menu.Item as="a">Nav item again</Menu.Item>
-              <Menu.Item as="a">One more nav</Menu.Item>
-              <Menu.Item as="a">Another nav item</Menu.Item>
-              <Menu.Item as="a">More navigation</Menu.Item>
-              <Divider hidden />
-              <Menu.Item as="a">Macintoch</Menu.Item>
-              <Menu.Item as="a">Linux</Menu.Item>
-              <Menu.Item as="a">Windows</Menu.Item>
+
             </Menu>
           </Grid.Column>
           <Grid.Column

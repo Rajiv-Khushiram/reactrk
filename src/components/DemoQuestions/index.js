@@ -328,6 +328,37 @@ class Questions extends Component {
                         name='checkboxRadioGroup'
                       />
                     </Form.Field>
+                    <Form.Field>
+                      Question 4: <p className="questionTitle">The section contains questions on constructors and its types, copy constructor, overloading constructors, destructors, execution of constructor or destructor.</p>
+                    </Form.Field>
+                    <Form.Field>
+                      <Checkbox
+                        radio
+                        label='Copy Constructor'
+                        name='checkboxRadioGroup'
+                      />
+                    </Form.Field>
+                    <Form.Field>
+                      <Checkbox
+                        radio
+                        label='Types of Constructors'
+                        name='checkboxRadioGroup'
+                      />
+                    </Form.Field>
+                    <Form.Field>
+                      <Checkbox
+                        radio
+                        label='Execution of Constructor or Destructor'
+                        name='checkboxRadioGroup'
+                      />
+                    </Form.Field>
+                    <Form.Field>
+                      <Checkbox
+                        radio
+                        label='Overloading Constructors'
+                        name='checkboxRadioGroup'
+                      />
+                    </Form.Field>
 
                     <Button type="primary">Submit</Button>
                   </Form>
