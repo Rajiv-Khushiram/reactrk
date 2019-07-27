@@ -5,6 +5,7 @@ import './App.scss';
 /* import ModernNavigationBar from  './components/ModernNavigationbar' */
 import Loader from "./components/Loader";
 import { loaderStatus } from "./components/Utils/utilities";
+import LoginForm from './components/LoginComponent'
 import { Container,
   Segment,
   Icon,
@@ -46,7 +47,7 @@ class App extends React.Component {
     return (
       
         <React.Fragment>
-   
+   <LoginForm />
              
         </React.Fragment>
 
