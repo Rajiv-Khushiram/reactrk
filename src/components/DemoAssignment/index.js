@@ -23,6 +23,12 @@ class Assignment extends Component {
       display: "none"
     }
   };
+componentDidMount() {
+  this.setState ({
+    r1:this.props.location.state.id,
+
+})
+}
 
   handleToggleDropdownMenu = () => {
     let newState = Object.assign({}, this.state);

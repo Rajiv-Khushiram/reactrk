@@ -23,6 +23,24 @@ class Dashboard extends Component {
     }
   };
 
+  componentDidMount() {
+    // let headers = new Headers({
+    //   'Content-Type': 'application/json'
+    // })
+
+    // fetch("https://cerealkillers-api.herokuapp.com/api/v1/course", {
+    //   method: 'post',
+    //   body: JSON.stringify({
+    //     name: 'Test course'
+    //   }),
+    //   headers: headers
+    // })
+    //   .then(resp => resp.json())
+    //   .then(data => console.log(data)); 
+  }
+
+
+
   handleToggleDropdownMenu = () => {
     let newState = Object.assign({}, this.state);
     if (newState.dropdownMenuStyle.display === "none") {
@@ -142,6 +160,16 @@ class Dashboard extends Component {
                     Label
                   </Label>
                   </Link>
+
+                  <Link
+  to={{
+    pathname: "/rating",
+    data: this.state, // your data array of objects
+    state: {
+      courseId:'5d3c75348adf4b0004b3bcdc'
+    }
+  }}
+> </Link>
                   <p>Something else</p>
                 </Grid.Column>
                 <Grid.Column mobile={8} tablet={4} computer={4}>

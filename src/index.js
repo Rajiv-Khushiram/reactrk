@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
-import {Router, Switch, Route} from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -10,25 +10,27 @@ import Dashboard from './components/DemoDashboard';
 import Assignments from './components/DemoAssignment';
 import Tasks from './components/DemoTasks';
 import Questions from './components/DemoQuestions';
-import Rating from './components/DemoRating';
+import Ratings from './components/DemoRating';
 import Success from './components/DemoSuccess';
 import Result from './components/DemoResult';
 
 ReactDOM.render(
     
-    <Router history={createBrowserHistory()}>
+    <BrowserRouter>
         <Switch>
             <Route exact={true} path='/' component={App}/>
-            <Route path='/dashboard' component={Dashboard}/>
-            <Route path='/assignments' component={Assignments}/>
-            <Route path='/tasks' render={() => <Tasks />}/>
-            <Route path='/questions' render={() => <Questions />}/>
-            <Route path='/rating' render={() => <Rating />}/>
-            <Route path='/success' render={() => <Success/>}/>
-            <Route path='/result' render={() => <Result />}/>
+            <Route path='/courses' component={Dashboard}/>
+            {/* <Route path='/assignments' component={Assignments}/> */}
+            <Route path='/tasks'  component={Tasks}/>
+            <Route path='/questions'  component={Questions}/>
+            <Route path='/rating' component={Ratings}/>
+            <Route path='/success' components={Success}/>
+            <Route path='/result' components={Result}/>
+            <Route path='/courses/:courseId' components={Assignments} />
             
         </Switch>
-    </Router>,
+        </BrowserRouter>
+,
     document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

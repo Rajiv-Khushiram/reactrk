@@ -1,7 +1,9 @@
 import React, {Component } from 'react'
 import SearchExampleCategory from './searchbar.js'
+import { Route , withRouter} from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import { createHashHistory } from 'history'
 import './rating.scss'
-import SkillComponent from './SkillComponent'
 import ButtonRed from './button.js'
 import {
     Button,
@@ -14,30 +16,44 @@ import {
     Label,
     Menu,
     Table,
-    List
+    List,
+    TextArea,
+    Rating
   } from "semantic-ui-react";
-import './rating.scss'
+  
 
-class Rating extends Component{
-    state = {
+
+
+class Ratings extends Component{
+  constructor(props) {
+  super(props)
+  this.nextpage = this.nextpage.bind(this);
+  this.state = {
+        r1: '4',
+        r2: '3',
+        r3: '2', 
+
         dropdownMenuStyle: {
-          display: "none"
+          display: "none",          
         }
-      };
+      }
+    }
+
+ 
+    nextpage = () => { 
+      console.log('do something')
+    }
+
+    handleChange = (e) => {
+      this.setState({
+        [e.target.id]: e.target.value
+      });
+    }  
     
-      handleToggleDropdownMenu = () => {
-        let newState = Object.assign({}, this.state);
-        if (newState.dropdownMenuStyle.display === "none") {
-          newState.dropdownMenuStyle = { display: "flex" };
-        } else {
-          newState.dropdownMenuStyle = { display: "none" };
-        }
-    
-        this.setState(newState);
-      };
     render(){
         return (
             <div className="App">
+            
           <Grid padded className="tablet computer only">
             <Menu borderless inverted fluid fixed="top">
               <Menu.Item header as="a">
@@ -135,10 +151,45 @@ class Rating extends Component{
                 </div>
                 <h2 className='header'> Please Choose How Petent You Are With These Skills</h2>
                 <h3 className='technicalskill'> Technical skills</h3>
-                <div className='ratingSkills'><SkillComponent /> </div>
+                <div className='ratingSkills'>
+                <h3>AWS </h3>
+                <Rating id="q1"  maxRating={5} onChange={this.handleChange}  />
+                <TextArea 
+              id = 'comments' 
+              rows={5}
+              onChange = {this.handleChange} 
+              style={{ width: '100%' }} 
+              placeholder = 'Comments'
+            />
+    <br />
+    <br />
+       <h3>MongoDB </h3>
+       <Rating  maxRating={5} onChange={this.handleFacilityRatingChange}  />
+       <h3>Javascript </h3>
+       <Rating maxRating={5}  onChange={this.handleStaffRatingChange}  />
+       <h3>Google Cloud </h3>
+       <Rating maxRating={5}  onChange={this.handleStaffRatingChange}  />
+                <br>
+                </br>
+                <br></br>
+                <Link
+  to={{
+    pathname: "/questions",
+    data: this.state, // your data array of objects
+    state: {
+      r1:'3',
+      r2:'4',
+      r3:'1'
+    }
+  }}
+> <Button>Next</Button></Link>
+                  </div>
+                  
                 <br />
-                <a href="/questions"><div className='button'><ButtonRed/></div></a>
+               
+                
             </div>
+            
             </Grid>
             </div>
         )
@@ -146,4 +197,4 @@ class Rating extends Component{
 
 }
 
-export default Rating;
+export default Ratings;

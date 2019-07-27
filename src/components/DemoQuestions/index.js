@@ -12,17 +12,37 @@ import {
     Menu,
     Table,
     List,
+    Form,
     Container
   } from "semantic-ui-react";
    import './index.css'
 
 class Questions extends Component {
     state = {
+      mcq1:"",
+      mcq2:"",
+      mcq3:"",
+      mcq4:"",
+      r1: '',
+      r2: '',
+      r3: '',
       dropdownMenuStyle: {
         display: "none"
       }
     };
   
+    componentDidMount () {
+
+      const { data } = this.props.location
+
+      this.setState ({
+          r1:this.props.location.state.r1,
+          r2:this.props.location.state.r2,
+          r3: this.props.location.state.r3
+      }) 
+    }
+
+
     handleToggleDropdownMenu = () => {
       let newState = Object.assign({}, this.state);
       if (newState.dropdownMenuStyle.display === "none") {
@@ -33,6 +53,44 @@ class Questions extends Component {
   
       this.setState(newState);
     };
+
+    handleSubmit = () => {
+      let headers = new Headers({
+        'Content-Type': 'application/json'
+      })
+      console.log('do fetch')
+      
+    fetch("https://cerealkillers-api.herokuapp.com/api/v1/assignment", {
+      method: 'post',
+      body: JSON.stringify({
+        name: 'Michel',
+        deadline: Date.now(),
+        desc:'IOT',
+        studentId: '5d3c3f54fb94653a5c4a7403',
+        skillsRating: [{
+          skillName: 'MongoDb',
+          value: 3
+      }, {
+      skillName: 'Javascript',
+      value: 4 }, {
+        skillName: 'GCP',
+        value: 1 }],
+      mcqAnswers: [{
+        questionId: '1',
+        answer:  'A',
+    },{
+      questionId: '2',
+      answer:  'B',
+  },{
+    questionId: '3',
+    answer:  'C',
+}]
+      }),
+      headers: headers
+    })
+      .then(resp => console.log(resp))
+      // .then(data => console.log(data));
+    }
   
     render() {
       return (
@@ -98,7 +156,7 @@ class Questions extends Component {
             >
               <Menu vertical borderless fluid text>
                 <Menu.Item as="a">
-                  Dashboard
+                 Dashboard
                 </Menu.Item>
                 <Menu.Item active as="a">Assignments</Menu.Item>
                 <Menu.Item as="a">Analytics</Menu.Item>
@@ -139,7 +197,7 @@ class Questions extends Component {
                 </Grid.Row>
                 <div style={{clear:'both', width:'100%'}}>
                 <Container fluid>
-      <Header as='h2'>Medical Appointment System</Header>
+      <Header as='h2' style={{color:'red'}}>Medical Appointment System</Header>
       <p>
         Domestic dogs inherited complex behaviors, such as bite inhibition, from their wolf
         ancestors, which would have been pack hunters with complex body language. These
@@ -163,11 +221,20 @@ class Questions extends Component {
   
                 <Grid.Row>
                 <Container fluid>
-      <Header as='h2'>Technical Questions</Header>
+      <Header as='h2' style={{color:'red'}}>Technical Questions</Header>
       </Container>
       <Divider/>
       <Container textAlign='left'>Due: 13th August | 4 Questions </Container>
       <Divider/>
+      <Form onSubmit={this.handleSubmit}>
+    <Form.Group grouped>
+      <label>What file manages the depencies</label>
+      <Form.Field label='This one' control='input' type='radio' name='htmlRadios' />
+      <Form.Field label='That one' control='input' type='radio' name='htmlRadios' />
+    </Form.Group>
+    <Button type="primary">Submit</Button>
+  </Form>
+
                     </Grid.Row>
                     <Grid.Row>
                 
