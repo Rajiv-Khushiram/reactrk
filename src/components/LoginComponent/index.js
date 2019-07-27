@@ -7,8 +7,11 @@ class LoginForm extends Component{
   constructor(props){
     super(props);
     this.state = {
-      email:"",
-      password:""
+      object:{
+        email:"",
+        password:""
+      }
+      
     }
   }
 
@@ -26,15 +29,45 @@ class LoginForm extends Component{
     var email = document.getElementById("email")
     var password = document.getElementById("password")
     if(email && password){
-        this.setState({email: email.value, password: password.value})
+        this.setState( {object: {email: email.value, password: password.value}})
     }
-    if(this.state.email === "hackathon@gmail.com" && this.state.password === "hackathon"){
+    if(this.state.object.email === "hackathon@gmail.com" && this.state.object.password === "hackathon"){
         window.location.href = "/dashboard";
     }
     else{
-        alert("Login Failt!!")
-        console.log(this.state.email);
-        console.log(this.state.password);
+      fetch("https://cerealkillers-api.herokuapp.com/api/v1/auth/login", {
+        method: 'POST', 
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(this.state)
+    })
+      .then(response => {
+        console.log(response.status)
+        if(response.status === 200){
+            window.location.href = "/dashboard";
+        }
+        else{
+          alert("Login Failt!!")
+        }
+        // if(response.)
+  })
+      
+
+        // .then(response => response.json())
+        // .then(json => this.setState({users: json}))
+        // .then(json => console.log(this.state.users[0]))
+        // .then(json => {
+        //   this.state.users.map(user => {
+        //     if(user.email === this.state.email)
+        //       window.location.href = "/dashboard";
+        //     else
+        //       alert("Login Failt!!")
+        //   })
+        // })
+        // alert("Login Failt!!")
+        // console.log(this.state.email);
+        // console.log(this.state.password);
     }
     event.preventDefault();
   }
