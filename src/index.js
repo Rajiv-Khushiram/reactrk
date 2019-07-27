@@ -9,7 +9,6 @@ import 'semantic-ui-css/semantic.min.css';
 import Dashboard from './components/DemoDashboard';
 import Assignments from './components/DemoAssignment';
 import Tasks from './components/DemoTasks';
-import Questions from './components/DemoQuestions';
 import Rating from './components/DemoRating';
 import Success from './components/DemoSuccess';
 import Result from './components/DemoResult';
