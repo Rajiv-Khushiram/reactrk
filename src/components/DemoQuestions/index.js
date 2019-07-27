@@ -99,7 +99,7 @@ class Questions extends Component {
     })
       .then(resp => {
         console.log(resp);
-        if(resp.status === 200)
+        if(resp.status === 201)
         window.location.href="/success";
       })
   };
