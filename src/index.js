@@ -20,13 +20,12 @@ ReactDOM.render(
         <Switch>
             <Route exact={true} path='/' component={App}/>
             <Route path='/courses' component={Dashboard}/>
-            {/* <Route path='/assignments' component={Assignments}/> */}
+            <Route path='/assignments' component={Assignments}/>
             <Route path='/tasks'  component={Tasks}/>
             <Route path='/questions'  component={Questions}/>
             <Route path='/rating' component={Ratings}/>
-            <Route path='/success' components={Success}/>
-            <Route path='/result' components={Result}/>
-            <Route path='/courses/:courseId' components={Assignments} />
+            <Route path='/success' component={Success}/>
+            <Route path='/result' component={Result}/>
             
         </Switch>
         </BrowserRouter>

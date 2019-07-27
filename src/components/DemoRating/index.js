@@ -1,9 +1,8 @@
 import React, {Component } from 'react'
 import SearchExampleCategory from './searchbar.js'
-import { Route , withRouter} from 'react-router-dom';
-import { Link } from 'react-router-dom'
-import { createHashHistory } from 'history'
 import './rating.scss'
+import SkillComponent from './SkillComponent'
+import { Link } from 'react-router-dom'
 import ButtonRed from './button.js'
 import {
     Button,
@@ -16,44 +15,30 @@ import {
     Label,
     Menu,
     Table,
-    List,
-    TextArea,
-    Rating
+    List
   } from "semantic-ui-react";
-  
-
-
+import './rating.scss'
 
 class Ratings extends Component{
-  constructor(props) {
-  super(props)
-  this.nextpage = this.nextpage.bind(this);
-  this.state = {
-        r1: '4',
-        r2: '3',
-        r3: '2', 
-
+    state = {
         dropdownMenuStyle: {
-          display: "none",          
+          display: "none"
         }
-      }
-    }
-
- 
-    nextpage = () => { 
-      console.log('do something')
-    }
-
-    handleChange = (e) => {
-      this.setState({
-        [e.target.id]: e.target.value
-      });
-    }  
+      };
     
+      handleToggleDropdownMenu = () => {
+        let newState = Object.assign({}, this.state);
+        if (newState.dropdownMenuStyle.display === "none") {
+          newState.dropdownMenuStyle = { display: "flex" };
+        } else {
+          newState.dropdownMenuStyle = { display: "none" };
+        }
+    
+        this.setState(newState);
+      };
     render(){
         return (
             <div className="App">
-            
           <Grid padded className="tablet computer only">
             <Menu borderless inverted fluid fixed="top">
               <Menu.Item header as="a">
@@ -107,38 +92,7 @@ class Ratings extends Component{
             </Menu>
           </Grid>
           <Grid padded>
-            <Grid.Column
-              tablet={3}
-              computer={3}
-              only="tablet computer"
-              id="sidebar"
-            >
-              <Menu vertical borderless fluid text>
-                <Menu.Item as="a">
-                  Dashboard
-                </Menu.Item>
-                <Menu.Item active as="a">Assignments</Menu.Item>
-                <Menu.Item as="a">Analytics</Menu.Item>
-                <Menu.Item as="a">Export</Menu.Item>
-                <Divider hidden />
-                <Menu.Item as="a">Nav item</Menu.Item>
-                <Menu.Item as="a">Nav item again</Menu.Item>
-                <Menu.Item as="a">One more nav</Menu.Item>
-                <Menu.Item as="a">Another nav item</Menu.Item>
-                <Menu.Item as="a">More navigation</Menu.Item>
-                <Divider hidden />
-                <Menu.Item as="a">Macintoch</Menu.Item>
-                <Menu.Item as="a">Linux</Menu.Item>
-                <Menu.Item as="a">Windows</Menu.Item>
-              </Menu>
-            </Grid.Column>
-            <Grid.Column
-              mobile={16}
-              tablet={13}
-              computer={13}
-              floated="right"
-              id="content"
-            ></Grid.Column>
+
             <div>
                 <div className='searchbar'><SearchExampleCategory /></div>
                 <div><h1 className='assignmentheader'>Assignment 1: APPLE</h1></div>
@@ -151,27 +105,7 @@ class Ratings extends Component{
                 </div>
                 <h2 className='header'> Please Choose How Petent You Are With These Skills</h2>
                 <h3 className='technicalskill'> Technical skills</h3>
-                <div className='ratingSkills'>
-                <h3>AWS </h3>
-                <Rating id="q1"  maxRating={5} onChange={this.handleChange}  />
-                <TextArea 
-              id = 'comments' 
-              rows={5}
-              onChange = {this.handleChange} 
-              style={{ width: '100%' }} 
-              placeholder = 'Comments'
-            />
-    <br />
-    <br />
-       <h3>MongoDB </h3>
-       <Rating  maxRating={5} onChange={this.handleFacilityRatingChange}  />
-       <h3>Javascript </h3>
-       <Rating maxRating={5}  onChange={this.handleStaffRatingChange}  />
-       <h3>Google Cloud </h3>
-       <Rating maxRating={5}  onChange={this.handleStaffRatingChange}  />
-                <br>
-                </br>
-                <br></br>
+                <div className='ratingSkills'><SkillComponent /> 
                 <Link
   to={{
     pathname: "/questions",
@@ -182,14 +116,10 @@ class Ratings extends Component{
       r3:'1'
     }
   }}
-> <Button>Next</Button></Link>
-                  </div>
-                  
+> <Button>Next</Button></Link></div>
                 <br />
                
-                
             </div>
-            
             </Grid>
             </div>
         )

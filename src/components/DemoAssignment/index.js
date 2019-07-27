@@ -19,15 +19,25 @@ import {
 
 class Assignment extends Component {
   state = {
+    courseId:'',
     dropdownMenuStyle: {
       display: "none"
     }
+   
   };
 componentDidMount() {
   this.setState ({
-    r1:this.props.location.state.id,
-
+    courseId:this.props.location.state.courseId,
 })
+
+console.log(this.props.location.state.courseId);
+
+
+
+fetch('https://cerealkillers-api.herokuapp.com/api/v1/assignment/5d3c893e40153fab1ced3111 ')
+      .then(response => console.log(response.json()))
+      .then(data => this.setState({ data }));
+
 }
 
   handleToggleDropdownMenu = () => {
@@ -139,13 +149,22 @@ componentDidMount() {
               </Grid.Row>
               <div style={{clear:'both', width:'100%'}}>
 
-              <Table unstackable fluid>
+              <Table unstackable>
 
     <Table.Body>
       <Table.Row>
         <Table.Cell>    <List.Item>
-          <Link to="rating">
-  <List.Header as='a'>1. IOT / Project</List.Header>
+          <Link to="rating"
+           to={{
+            pathname: "/rating",
+            data: this.state, // your data array of objects
+            state: {
+              courseId:'5d3c893e40153fab1ced3111'
+            }
+          }}
+
+          >
+  <List.Header>1. IOT / Project</List.Header>
   </Link>
   <br></br>
   <Label size='small' color='red' pointing='right'>
@@ -156,9 +175,9 @@ componentDidMount() {
 
       </Table.Row>
       <Table.Row>
-        <Table.Cell> <List.Item as='a'>
+        <Table.Cell> <List.Item >
         <Link to="rating">
-  <List.Header as='a'>2. Data Analysis/ Project</List.Header>
+  <List.Header >2. Data Analysis/ Project</List.Header>
   </Link><br></br>
   <Label  size='small' color='red' pointing='right'>
         Due
@@ -170,7 +189,7 @@ componentDidMount() {
       <Table.Row>
         <Table.Cell> <List.Item>
         <Link to="rating">
-  <List.Header as='a'>3. Semantic-Org/ Project</List.Header>
+  <List.Header >3. Semantic-Org/ Project</List.Header>
   </Link><br></br>
   <Label  size='small' color='red' pointing='right'>
         Due

@@ -23,24 +23,6 @@ class Dashboard extends Component {
     }
   };
 
-  componentDidMount() {
-    // let headers = new Headers({
-    //   'Content-Type': 'application/json'
-    // })
-
-    // fetch("https://cerealkillers-api.herokuapp.com/api/v1/course", {
-    //   method: 'post',
-    //   body: JSON.stringify({
-    //     name: 'Test course'
-    //   }),
-    //   headers: headers
-    // })
-    //   .then(resp => resp.json())
-    //   .then(data => console.log(data)); 
-  }
-
-
-
   handleToggleDropdownMenu = () => {
     let newState = Object.assign({}, this.state);
     if (newState.dropdownMenuStyle.display === "none") {
@@ -143,7 +125,7 @@ class Dashboard extends Component {
             <Grid padded>
               <Grid.Row>
                 <Header dividing size="huge" as="h1">
-                  Dashboard
+                  Courses
                 </Header>
               </Grid.Row>
               <Grid.Row textAlign="center">
@@ -155,22 +137,19 @@ class Dashboard extends Component {
                     size="small"
                     src="https://rawcdn.githack.com/semantic-ui-forest/forest-templates/b8a63e3c5f573143431a7fa42404f0bc83c419b2/bootstrap/dashboard/react/public/static/images/wireframe/square-image.png"
                   />
-                  <Link to="/assignments">
-                  <Label basic size="large">
-                    Label
-                  </Label>
-                  </Link>
-
+                  
                   <Link
   to={{
-    pathname: "/rating",
+    pathname: "/assignments",
     data: this.state, // your data array of objects
     state: {
-      courseId:'5d3c75348adf4b0004b3bcdc'
+      courseId:'5d3c893e40153fab1ced3111'
     }
   }}
-> </Link>
-                  <p>Something else</p>
+> <Button>Cloud Computing</Button>
+                
+                  </Link>
+                  <p>COSC-3112</p>
                 </Grid.Column>
                 <Grid.Column mobile={8} tablet={4} computer={4}>
                   <Image
@@ -181,10 +160,10 @@ class Dashboard extends Component {
                   />
                   <Link to="/assignments">
                   <Label basic size="large">
-                    Label
+                    Database Concepts
                   </Label>
                   </Link>
-                  <p>Something else</p>
+                  <p>COSC-1121</p>
                 </Grid.Column>
                 <Grid.Column mobile={8} tablet={4} computer={4}>
                   <Image
@@ -195,10 +174,10 @@ class Dashboard extends Component {
                   />
                   <Link to="/assignments">
                   <Label basic size="large">
-                    Label
+                    OOSD
                   </Label>
                   </Link>
-                  <p>Something else</p>
+                  <p>COSC-2112</p>
                 </Grid.Column>
                 <Grid.Column mobile={8} tablet={4} computer={4}>
                   <Image
@@ -209,10 +188,10 @@ class Dashboard extends Component {
                   />
                   <Link to="/assignments">
                   <Label basic size="large">
-                    Label
+                    Internet of Things
                   </Label>
                   </Link>
-                  <p>Something else</p>
+                  <p>COSC-1112</p>
                 </Grid.Column>
               </Grid.Row>
               <Divider section hidden />

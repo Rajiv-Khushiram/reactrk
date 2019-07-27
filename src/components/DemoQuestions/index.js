@@ -13,7 +13,8 @@ import {
     Table,
     List,
     Form,
-    Container
+    Container,
+    Checkbox
   } from "semantic-ui-react";
    import './index.css'
 
@@ -90,6 +91,9 @@ class Questions extends Component {
     })
       .then(resp => console.log(resp))
       // .then(data => console.log(data));
+
+
+
     }
   
     render() {
@@ -227,11 +231,100 @@ class Questions extends Component {
       <Container textAlign='left'>Due: 13th August | 4 Questions </Container>
       <Divider/>
       <Form onSubmit={this.handleSubmit}>
-    <Form.Group grouped>
-      <label>What file manages the depencies</label>
-      <Form.Field label='This one' control='input' type='radio' name='htmlRadios' />
-      <Form.Field label='That one' control='input' type='radio' name='htmlRadios' />
-    </Form.Group>
+      <Form.Field>
+         Question 1: <p className="questionTitle">The section contains questions and answers on oops basic concepts, objects, classes, oops features, polymorphism, encapsulation and abstraction.</p>
+       </Form.Field>
+       <Form.Field>
+         <Checkbox
+           radio
+           label='OOPs Basic Concepts'
+           name='checkboxRadioGroup'
+         />
+       </Form.Field>
+       <Form.Field>
+         <Checkbox
+           radio
+           label='Encapsulation'
+           name='checkboxRadioGroup'
+         />
+       </Form.Field>
+       <Form.Field>
+         <Checkbox
+           radio
+           label='OOPs Features'
+           name='checkboxRadioGroup'
+         />
+       </Form.Field>
+       <Form.Field>
+         <Checkbox
+           radio
+           label='Polymorphism'
+           name='checkboxRadioGroup'
+         />
+       </Form.Field>
+    <Form.Field>
+         Question 2: <p className="questionTitle">The section contains questions on constructors and its types, copy constructor, overloading constructors, destructors, execution of constructor or destructor.</p>
+       </Form.Field>
+       <Form.Field>
+         <Checkbox
+           radio
+           label='Copy Constructor'
+           name='checkboxRadioGroup'
+         />
+       </Form.Field>
+       <Form.Field>
+         <Checkbox
+           radio
+           label='Types of Constructors'
+           name='checkboxRadioGroup'
+         />
+       </Form.Field>
+       <Form.Field>
+         <Checkbox
+           radio
+           label='Execution of Constructor or Destructor'
+           name='checkboxRadioGroup'
+         />
+       </Form.Field>
+       <Form.Field>
+         <Checkbox
+           radio
+           label='Overloading Constructors'
+           name='checkboxRadioGroup'
+         />
+       </Form.Field>
+       <Form.Field>
+         Question 3: <p className="questionTitle">The section contains questions and answers on access specifiers, private, public and protected access Specifiers.</p>
+       </Form.Field>
+       <Form.Field>
+         <Checkbox
+           radio
+           label='Private Access Specifier'
+           name='checkboxRadioGroup'
+         />
+       </Form.Field>
+       <Form.Field>
+         <Checkbox
+           radio
+           label='Public Access Specifier'
+           name='checkboxRadioGroup'
+         />
+       </Form.Field>
+       <Form.Field>
+         <Checkbox
+           radio
+           label='Access Specifiers'
+           name='checkboxRadioGroup'
+         />
+       </Form.Field>
+       <Form.Field>
+         <Checkbox
+           radio
+           label='Protected Access Specifier'
+           name='checkboxRadioGroup'
+         />
+       </Form.Field>
+      
     <Button type="primary">Submit</Button>
   </Form>
 
