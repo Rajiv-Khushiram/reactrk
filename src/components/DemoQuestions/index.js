@@ -97,7 +97,8 @@ class Questions extends Component {
       body: JSON.stringify(postData),
       headers: headers
     })
-      .then(resp => console.log(resp));
+      .then(resp => console.log(resp))
+      .then(window.location.href="/success")
   };
 
   render() {
