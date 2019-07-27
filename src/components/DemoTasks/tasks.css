@@ -47,6 +47,9 @@
     font-weight: bold;
     color: white;
 }
+.questionTitle{
+    width: 60%;
+}
 /* .anchors{
     background-color: white;
     text-decoration: none;
