@@ -1,5 +1,6 @@
 import React, {Component } from 'react';
 import './tasks.css';
+import {Link} from 'react-router-dom';
 class Tasks extends Component{
     render(){
         return (
@@ -18,7 +19,7 @@ class Tasks extends Component{
                     you’re on your own.
                 </p>
                 <h2>PICK YOUR INITIAL TASK</h2>
-                <a href="http://localhost:3000/questions">
+                <Link to="/success">    
                 <div className="AssignmentTask">
                 
                     <div className="AssignmentIcon">
@@ -35,8 +36,8 @@ class Tasks extends Component{
                     </div>
                 
                 </div>
-                </a>
-                <a href="http://localhost:3000/questions">
+                </Link>
+                <Link to="/success">
                 <div className="AssignmentTask">
                     <div className="AssignmentIcon">
                         <img src="./images/computer.png" alt="computericon"/>
@@ -51,8 +52,8 @@ class Tasks extends Component{
                         <button type="button">Read More</button>
                     </div>
                 </div>
-                </a>
-                <a href="http://localhost:3000/questions">
+                </Link>
+                <Link to="/success">
                 <div className="AssignmentTask">
                     <div className="AssignmentIcon">
                         <img src="/images/computer.png" alt="computer icon"/>
@@ -67,7 +68,7 @@ class Tasks extends Component{
                         <button type="button">Read More</button>
                     </div>
                 </div>
-                </a>
+                </Link>
             </div>
         )
     }

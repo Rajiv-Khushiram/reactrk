@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import "semantic-ui-css/semantic.min.css";
-
+import {Link} from 'react-router-dom'
 import {
   Button,
   Divider,
@@ -138,7 +138,10 @@ class Assignment extends Component {
     <Table.Body>
       <Table.Row>
         <Table.Cell>    <List.Item>
-  <List.Header as='a'>1. IOT / Project</List.Header><br></br>
+          <Link to="rating">
+  <List.Header as='a'>1. IOT / Project</List.Header>
+  </Link>
+  <br></br>
   <Label size='small' color='red' pointing='right'>
         Due
       </Label> <List.Description as='a'> 22/07/19</List.Description>
@@ -148,7 +151,9 @@ class Assignment extends Component {
       </Table.Row>
       <Table.Row>
         <Table.Cell> <List.Item as='a'>
-  <List.Header as='a'>2. Data Analysis/ Project</List.Header><br></br>
+        <Link to="rating">
+  <List.Header as='a'>2. Data Analysis/ Project</List.Header>
+  </Link><br></br>
   <Label  size='small' color='red' pointing='right'>
         Due
       </Label> <List.Description as='a'> 28/07/19</List.Description>
@@ -158,7 +163,9 @@ class Assignment extends Component {
       </Table.Row>
       <Table.Row>
         <Table.Cell> <List.Item>
-  <List.Header as='a'>3. Semantic-Org/ Project</List.Header><br></br>
+        <Link to="rating">
+  <List.Header as='a'>3. Semantic-Org/ Project</List.Header>
+  </Link><br></br>
   <Label  size='small' color='red' pointing='right'>
         Due
       </Label> <List.Description as='a'> 30/07/19</List.Description>
@@ -170,27 +177,6 @@ class Assignment extends Component {
   </Table>
 
               <List divided relaxed>
-    <List.Item>
-  
-   
-        <List.Header as='a'>1. Semantic-Org/Semantic-UI</List.Header>
-        <List.Description as='a'>Updated 10 mins ago</List.Description>
- 
-    </List.Item>
-    <List.Item>
-    
-    
-        <List.Header as='a'>2. Semantic-Org/Semantic-UI-Docs</List.Header>
-        <List.Description as='a'>Updated 22 mins ago</List.Description>
-     
-    </List.Item>
-    <List.Item>
-  
-   
-        <List.Header as='a'>3. Semantic-Org/Semantic-UI-Meteor</List.Header>
-        <List.Description as='a'>Updated 34 mins ago</List.Description>
-    
-    </List.Item>
   </List>
               {/* <Grid.Row>
               <List.Item>

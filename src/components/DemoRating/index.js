@@ -3,10 +3,126 @@ import SearchExampleCategory from './searchbar.js'
 import './rating.scss'
 import SkillComponent from './SkillComponent'
 import ButtonRed from './button.js'
+import {
+    Button,
+    Divider,
+    Grid,
+    Header,
+    Icon,
+    Input,
+    Breadcrumb,
+    Label,
+    Menu,
+    Table,
+    List
+  } from "semantic-ui-react";
+import './rating.scss'
 
 class Rating extends Component{
+    state = {
+        dropdownMenuStyle: {
+          display: "none"
+        }
+      };
+    
+      handleToggleDropdownMenu = () => {
+        let newState = Object.assign({}, this.state);
+        if (newState.dropdownMenuStyle.display === "none") {
+          newState.dropdownMenuStyle = { display: "flex" };
+        } else {
+          newState.dropdownMenuStyle = { display: "none" };
+        }
+    
+        this.setState(newState);
+      };
     render(){
         return (
+            <div className="App">
+          <Grid padded className="tablet computer only">
+            <Menu borderless inverted fluid fixed="top">
+              <Menu.Item header as="a">
+                Project name
+              </Menu.Item>
+              <Menu.Menu position="right">
+                {/* <Menu.Item>
+                  <Input placeholder="Search..." size="small" />
+                </Menu.Item> */}
+                <Menu.Item as="a">Dashboard</Menu.Item>
+                <Menu.Item as="a">Settings</Menu.Item>
+                <Menu.Item as="a">Profile</Menu.Item>
+                <Menu.Item as="a">Help</Menu.Item>
+              </Menu.Menu>
+            </Menu>
+          </Grid>
+          <Grid padded className="mobile only">
+            <Menu borderless inverted fluid fixed="top">
+              <Menu.Item header as="a">
+                Project Name
+              </Menu.Item>
+              <Menu.Menu position="right">
+                <Menu.Item>
+                  <Button
+                    basic
+                    inverted
+                    icon
+                    toggle
+                    onClick={this.handleToggleDropdownMenu}
+                  >
+                    <Icon name="content" />
+                  </Button>
+                </Menu.Item>
+              </Menu.Menu>
+              <Menu
+                borderless
+                fluid
+                inverted
+                vertical
+                style={this.state.dropdownMenuStyle}
+              >
+                <Menu.Item as="a">Dashboard</Menu.Item>
+                <Menu.Item as="a">Settings</Menu.Item>
+                <Menu.Item as="a">Profile</Menu.Item>
+                <Menu.Item as="a">Help</Menu.Item>
+                <Divider fitted />
+                <Menu.Item>
+                  <Input placeholder="Search..." size="small" />
+                </Menu.Item>
+              </Menu>
+            </Menu>
+          </Grid>
+          <Grid padded>
+            <Grid.Column
+              tablet={3}
+              computer={3}
+              only="tablet computer"
+              id="sidebar"
+            >
+              <Menu vertical borderless fluid text>
+                <Menu.Item as="a">
+                  Dashboard
+                </Menu.Item>
+                <Menu.Item active as="a">Assignments</Menu.Item>
+                <Menu.Item as="a">Analytics</Menu.Item>
+                <Menu.Item as="a">Export</Menu.Item>
+                <Divider hidden />
+                <Menu.Item as="a">Nav item</Menu.Item>
+                <Menu.Item as="a">Nav item again</Menu.Item>
+                <Menu.Item as="a">One more nav</Menu.Item>
+                <Menu.Item as="a">Another nav item</Menu.Item>
+                <Menu.Item as="a">More navigation</Menu.Item>
+                <Divider hidden />
+                <Menu.Item as="a">Macintoch</Menu.Item>
+                <Menu.Item as="a">Linux</Menu.Item>
+                <Menu.Item as="a">Windows</Menu.Item>
+              </Menu>
+            </Grid.Column>
+            <Grid.Column
+              mobile={16}
+              tablet={13}
+              computer={13}
+              floated="right"
+              id="content"
+            ></Grid.Column>
             <div>
                 <div className='searchbar'><SearchExampleCategory /></div>
                 <div><h1 className='assignmentheader'>Assignment 1: APPLE</h1></div>
@@ -21,7 +137,9 @@ class Rating extends Component{
                 <h3 className='technicalskill'> Technical skills</h3>
                 <div className='ratingSkills'><SkillComponent /> </div>
                 <br />
-                <a href="/tasks"><div className='button'><ButtonRed/></div></a>
+                <a href="/questions"><div className='button'><ButtonRed/></div></a>
+            </div>
+            </Grid>
             </div>
         )
     }

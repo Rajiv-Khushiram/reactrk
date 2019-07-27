@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import {Link} from 'react-router-dom'
 import "semantic-ui-css/semantic.min.css";
 
 import {
@@ -129,6 +129,7 @@ class Dashboard extends Component {
                 </Header>
               </Grid.Row>
               <Grid.Row textAlign="center">
+                
                 <Grid.Column mobile={8} tablet={4} computer={4}>
                   <Image
                     centered
@@ -136,9 +137,11 @@ class Dashboard extends Component {
                     size="small"
                     src="https://rawcdn.githack.com/semantic-ui-forest/forest-templates/b8a63e3c5f573143431a7fa42404f0bc83c419b2/bootstrap/dashboard/react/public/static/images/wireframe/square-image.png"
                   />
+                  <Link to="/assignments">
                   <Label basic size="large">
                     Label
                   </Label>
+                  </Link>
                   <p>Something else</p>
                 </Grid.Column>
                 <Grid.Column mobile={8} tablet={4} computer={4}>
@@ -148,9 +151,11 @@ class Dashboard extends Component {
                     size="small"
                     src="https://rawcdn.githack.com/semantic-ui-forest/forest-templates/b8a63e3c5f573143431a7fa42404f0bc83c419b2/bootstrap/dashboard/react/public/static/images/wireframe/square-image.png"
                   />
+                  <Link to="/assignments">
                   <Label basic size="large">
                     Label
                   </Label>
+                  </Link>
                   <p>Something else</p>
                 </Grid.Column>
                 <Grid.Column mobile={8} tablet={4} computer={4}>
@@ -160,9 +165,11 @@ class Dashboard extends Component {
                     size="small"
                     src="https://rawcdn.githack.com/semantic-ui-forest/forest-templates/b8a63e3c5f573143431a7fa42404f0bc83c419b2/bootstrap/dashboard/react/public/static/images/wireframe/square-image.png"
                   />
+                  <Link to="/assignments">
                   <Label basic size="large">
                     Label
                   </Label>
+                  </Link>
                   <p>Something else</p>
                 </Grid.Column>
                 <Grid.Column mobile={8} tablet={4} computer={4}>
@@ -172,9 +179,11 @@ class Dashboard extends Component {
                     size="small"
                     src="https://rawcdn.githack.com/semantic-ui-forest/forest-templates/b8a63e3c5f573143431a7fa42404f0bc83c419b2/bootstrap/dashboard/react/public/static/images/wireframe/square-image.png"
                   />
+                  <Link to="/assignments">
                   <Label basic size="large">
                     Label
                   </Label>
+                  </Link>
                   <p>Something else</p>
                 </Grid.Column>
               </Grid.Row>
