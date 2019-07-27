@@ -91,38 +91,7 @@ class Rating extends Component{
             </Menu>
           </Grid>
           <Grid padded>
-            <Grid.Column
-              tablet={3}
-              computer={3}
-              only="tablet computer"
-              id="sidebar"
-            >
-              <Menu vertical borderless fluid text>
-                <Menu.Item as="a">
-                  Dashboard
-                </Menu.Item>
-                <Menu.Item active as="a">Assignments</Menu.Item>
-                <Menu.Item as="a">Analytics</Menu.Item>
-                <Menu.Item as="a">Export</Menu.Item>
-                <Divider hidden />
-                <Menu.Item as="a">Nav item</Menu.Item>
-                <Menu.Item as="a">Nav item again</Menu.Item>
-                <Menu.Item as="a">One more nav</Menu.Item>
-                <Menu.Item as="a">Another nav item</Menu.Item>
-                <Menu.Item as="a">More navigation</Menu.Item>
-                <Divider hidden />
-                <Menu.Item as="a">Macintoch</Menu.Item>
-                <Menu.Item as="a">Linux</Menu.Item>
-                <Menu.Item as="a">Windows</Menu.Item>
-              </Menu>
-            </Grid.Column>
-            <Grid.Column
-              mobile={16}
-              tablet={13}
-              computer={13}
-              floated="right"
-              id="content"
-            ></Grid.Column>
+
             <div>
                 <div className='searchbar'><SearchExampleCategory /></div>
                 <div><h1 className='assignmentheader'>Assignment 1: APPLE</h1></div>
@@ -137,7 +106,7 @@ class Rating extends Component{
                 <h3 className='technicalskill'> Technical skills</h3>
                 <div className='ratingSkills'><SkillComponent /> </div>
                 <br />
-                <a href="/questions"><div className='button'><ButtonRed/></div></a>
+                <a href="/multiplechoices"><div className='button'><ButtonRed/></div></a>
             </div>
             </Grid>
             </div>

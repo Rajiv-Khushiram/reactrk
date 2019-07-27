@@ -13,6 +13,7 @@ import Questions from './components/DemoQuestions';
 import Rating from './components/DemoRating';
 import Success from './components/DemoSuccess';
 import Result from './components/DemoResult';
+import MultipleChoice from './components/DemoMultipleChoice';
 
 ReactDOM.render(
     
@@ -22,10 +23,10 @@ ReactDOM.render(
             <Route path='/dashboard' component={Dashboard}/>
             <Route path='/assignments' component={Assignments}/>
             <Route path='/tasks' render={() => <Tasks />}/>
-            <Route path='/questions' render={() => <Questions />}/>
             <Route path='/rating' render={() => <Rating />}/>
             <Route path='/success' render={() => <Success/>}/>
             <Route path='/result' render={() => <Result />}/>
+            <Route path='/multiplechoices' render={() => <MultipleChoice />}/>
             
         </Switch>
     </Router>,
