@@ -1,14 +1,230 @@
-import React, {Component } from 'react';
+import React, { Component } from "react";
 
-class Assignments extends Component{
-    render(){
-        return (
-            <div>
-                <h1>Assignments</h1>
-            </div>
-        )
+import "semantic-ui-css/semantic.min.css";
+
+import {
+  Button,
+  Divider,
+  Grid,
+  Header,
+  Icon,
+  Input,
+  Breadcrumb,
+  Label,
+  Menu,
+  Table,
+  List
+} from "semantic-ui-react";
+ import './index.css'
+
+class Assignment extends Component {
+  state = {
+    dropdownMenuStyle: {
+      display: "none"
+    }
+  };
+
+  handleToggleDropdownMenu = () => {
+    let newState = Object.assign({}, this.state);
+    if (newState.dropdownMenuStyle.display === "none") {
+      newState.dropdownMenuStyle = { display: "flex" };
+    } else {
+      newState.dropdownMenuStyle = { display: "none" };
     }
 
+    this.setState(newState);
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <Grid padded className="tablet computer only">
+          <Menu borderless inverted fluid fixed="top">
+            <Menu.Item header as="a">
+              Project name
+            </Menu.Item>
+            <Menu.Menu position="right">
+              <Menu.Item>
+                <Input placeholder="Search..." size="small" />
+              </Menu.Item>
+              <Menu.Item as="a">Dashboard</Menu.Item>
+              <Menu.Item as="a">Settings</Menu.Item>
+              <Menu.Item as="a">Profile</Menu.Item>
+              <Menu.Item as="a">Help</Menu.Item>
+            </Menu.Menu>
+          </Menu>
+        </Grid>
+        <Grid padded className="mobile only">
+          <Menu borderless inverted fluid fixed="top">
+            <Menu.Item header as="a">
+              Project Name
+            </Menu.Item>
+            <Menu.Menu position="right">
+              <Menu.Item>
+                <Button
+                  basic
+                  inverted
+                  icon
+                  toggle
+                  onClick={this.handleToggleDropdownMenu}
+                >
+                  <Icon name="content" />
+                </Button>
+              </Menu.Item>
+            </Menu.Menu>
+            <Menu
+              borderless
+              fluid
+              inverted
+              vertical
+              style={this.state.dropdownMenuStyle}
+            >
+              <Menu.Item as="a">Dashboard</Menu.Item>
+              <Menu.Item as="a">Settings</Menu.Item>
+              <Menu.Item as="a">Profile</Menu.Item>
+              <Menu.Item as="a">Help</Menu.Item>
+              <Divider fitted />
+              <Menu.Item>
+                <Input placeholder="Search..." size="small" />
+              </Menu.Item>
+            </Menu>
+          </Menu>
+        </Grid>
+        <Grid padded>
+          <Grid.Column
+            tablet={3}
+            computer={3}
+            only="tablet computer"
+            id="sidebar"
+          >
+            <Menu vertical borderless fluid text>
+              <Menu.Item as="a">
+                Dashboard
+              </Menu.Item>
+              <Menu.Item active as="a">Assignments</Menu.Item>
+              <Menu.Item as="a">Analytics</Menu.Item>
+              <Menu.Item as="a">Export</Menu.Item>
+              <Divider hidden />
+              <Menu.Item as="a">Nav item</Menu.Item>
+              <Menu.Item as="a">Nav item again</Menu.Item>
+              <Menu.Item as="a">One more nav</Menu.Item>
+              <Menu.Item as="a">Another nav item</Menu.Item>
+              <Menu.Item as="a">More navigation</Menu.Item>
+              <Divider hidden />
+              <Menu.Item as="a">Macintoch</Menu.Item>
+              <Menu.Item as="a">Linux</Menu.Item>
+              <Menu.Item as="a">Windows</Menu.Item>
+            </Menu>
+          </Grid.Column>
+          <Grid.Column
+            mobile={16}
+            tablet={13}
+            computer={13}
+            floated="right"
+            id="content"
+          >
+            <Grid>
+              <Grid.Row>
+                <Breadcrumb>
+    <Breadcrumb.Section style={{paddingLeft:'10px'}} link>  COSC 2321</Breadcrumb.Section>
+    <Breadcrumb.Divider />
+    <Breadcrumb.Section link>Assignments</Breadcrumb.Section>
+  </Breadcrumb>
+              </Grid.Row>
+              <div style={{clear:'both', width:'100%'}}>
+
+              <Table unstackable fluid>
+
+    <Table.Body>
+      <Table.Row>
+        <Table.Cell>    <List.Item>
+  <List.Header as='a'>1. IOT / Project</List.Header><br></br>
+  <Label size='small' color='red' pointing='right'>
+        Due
+      </Label> <List.Description as='a'> 22/07/19</List.Description>
+
+</List.Item></Table.Cell>
+
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell> <List.Item as='a'>
+  <List.Header as='a'>2. Data Analysis/ Project</List.Header><br></br>
+  <Label  size='small' color='red' pointing='right'>
+        Due
+      </Label> <List.Description as='a'> 28/07/19</List.Description>
+
+</List.Item></Table.Cell>
+
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell> <List.Item>
+  <List.Header as='a'>3. Semantic-Org/ Project</List.Header><br></br>
+  <Label  size='small' color='red' pointing='right'>
+        Due
+      </Label> <List.Description as='a'> 30/07/19</List.Description>
+
+</List.Item></Table.Cell>
+
+      </Table.Row>
+    </Table.Body>
+  </Table>
+
+              <List divided relaxed>
+    <List.Item>
+  
+   
+        <List.Header as='a'>1. Semantic-Org/Semantic-UI</List.Header>
+        <List.Description as='a'>Updated 10 mins ago</List.Description>
+ 
+    </List.Item>
+    <List.Item>
+    
+    
+        <List.Header as='a'>2. Semantic-Org/Semantic-UI-Docs</List.Header>
+        <List.Description as='a'>Updated 22 mins ago</List.Description>
+     
+    </List.Item>
+    <List.Item>
+  
+   
+        <List.Header as='a'>3. Semantic-Org/Semantic-UI-Meteor</List.Header>
+        <List.Description as='a'>Updated 34 mins ago</List.Description>
+    
+    </List.Item>
+  </List>
+              {/* <Grid.Row>
+              <List.Item>
+      <label>1.</label><List.Item style={{ paddingLeft:'10px', float:'right'}}
+      content={<a href='mailto:jack@semantic-ui.com'> Assignment 1: AWS --20%</a>}
+    />
+    </List.Item>
+ 
+ 
+                  </Grid.Row>
+                  <Grid.Row>
+                  <List.Item>
+      <label>2.</label><List.Item style={{ paddingLeft:'10px', float:'right'}}
+      content={<a href='mailto:jack@semantic-ui.com'>Assignment 2: Devops --30%</a>}
+    />
+    </List.Item>
+                      </Grid.Row>
+                  <Grid.Row>
+      <List.Item>
+      <label>3.</label><List.Item style={{ paddingLeft:'10px', float:'right'}}
+      content={<a href='mailto:jack@semantic-ui.com'> Assignment 3: CI/CD --50%</a>}
+    />
+    </List.Item>
+                  </Grid.Row></div> */}
+                  </div>
+             </Grid>
+
+             
+             
+             </Grid.Column>
+             </Grid>
+      </div>
+    );
+  }
 }
 
-export default Assignments;
+export default Assignment;
