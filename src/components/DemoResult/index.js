@@ -115,7 +115,7 @@ class Result extends Component {
                 </Breadcrumb><br></br>
                                 <div><br></br><h1 >Assignment 1: Cloud Computing Part A (30%)</h1></div>
                                 <hr />
-                                <div className='randomtext'>
+                                <div>
                                     <p> Due date: 27 June by 20:29 Points: 8500 Submission: None</p>
                                     <p> Thuy that la hai huoc va xinh dep nua hihi. Hi vong giam khao se cham bai nay diem that caoooooo
                         Inquietude simplicity terminated she compliment remarkably few her nay. The weeks are ham asked jokes. Neglected perceived shy nay concluded. Not mile draw plan snug next all. </p>
