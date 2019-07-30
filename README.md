@@ -1,7 +1,8 @@
 ## iGroupAssignment Hackathon Day 2019 Project
 
 ### Project Description: 
-### Pitch
+
+
 This project addresses student **Group/Team formation** for assignments at all educational level.
 The purpose is to ensure that groups formed are relevant to their skill sets in order to maximise team learning opportunities among team members.
 This is achieved in a simple 3 process:
