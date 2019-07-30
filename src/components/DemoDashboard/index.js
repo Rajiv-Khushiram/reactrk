@@ -40,7 +40,7 @@ class Dashboard extends Component {
         <Grid padded className="tablet computer only">
           <Menu borderless inverted fluid fixed="top">
             <Menu.Item header as="a">
-              Project name
+            <Image style={{maxWidth:'40px', paddingRight:'5px'}} src='https://react.semantic-ui.com/logo.png' />iGroup Assignment
             </Menu.Item>
             <Menu.Menu position="right">
               <Menu.Item>

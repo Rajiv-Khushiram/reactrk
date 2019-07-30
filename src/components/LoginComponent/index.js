@@ -25,35 +25,20 @@ class LoginForm extends Component{
    });
  }
  handleSubmit = event => {
+  event.preventDefault();
+
    var email = document.getElementById("email")
    var password = document.getElementById("password")
    if(email && password){
        this.setState( {object: {email: email.value, password: password.value}})
    }
-   if(this.state.object.email === "hackathon@gmail.com" && this.state.object.password === "hackathon"){
+   if(this.state.object.email === "s123456@gmail.com" && this.state.object.password === "hackathon"){
        window.location.href = "/dashboard";
    }
-   else{
-     fetch("https://cerealkillers-api.herokuapp.com/api/v1/auth/login", {
-       method: 'POST',
-       headers:{
-           'Content-Type': 'application/json'
-       },
-       body: JSON.stringify(this.state)
-   })
-     .then(response => {
-       console.log(response.status)
-       if(response.status === 200){
-           window.location.href = "/courses";
+   else{ 
+         alert("Login Failed!")
        }
-       else{
-         alert("Login Failt!!")
-       }
-       // if(response.)
- })
-
-
-       // .then(response => response.json())
+       // if(response.)// .then(response => response.json())
        // .then(json => this.setState({users: json}))
        // .then(json => console.log(this.state.users[0]))
        // .then(json => {
@@ -67,9 +52,11 @@ class LoginForm extends Component{
        // alert("Login Failt!!")
        // console.log(this.state.email);
        // console.log(this.state.password);
-   }
-   event.preventDefault();
  }
+
+
+       
+
  render(){
 
    return(

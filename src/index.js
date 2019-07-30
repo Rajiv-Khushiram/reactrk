@@ -19,7 +19,7 @@ ReactDOM.render(
     <BrowserRouter>
         <Switch>
             <Route exact={true} path='/' component={App}/>
-            <Route path='/courses' component={Dashboard}/>
+            <Route path='/dashboard' component={Dashboard}/>
             <Route path='/assignments' component={Assignments}/>
             <Route path='/tasks'  component={Tasks}/>
             <Route path='/questions'  component={Questions}/>
