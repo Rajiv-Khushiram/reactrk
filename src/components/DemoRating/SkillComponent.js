@@ -4,13 +4,11 @@ import React from 'react'
 const SkillComponent = () => 
     (
     <div>
-        <h3>AWS </h3>
+        <h3>Front-End</h3>
         <RatingExampleStar />
-        <h3>MongoDB </h3>
+        <h3>Back-End</h3>
         <RatingExampleStar />
-        <h3>Javascript </h3>
-        <RatingExampleStar />
-        <h3>Google Cloud </h3>
+        <h3>Dev-Ops</h3>
         <RatingExampleStar />
     </div>
     

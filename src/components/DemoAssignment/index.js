@@ -13,16 +13,28 @@ import {
   Label,
   Menu,
   Table,
-  List
+  List,
+  Image
 } from "semantic-ui-react";
  import './index.css'
 
 class Assignment extends Component {
   state = {
+    courseId:'',
     dropdownMenuStyle: {
       display: "none"
     }
+   
   };
+componentDidMount() {
+  this.setState ({
+    courseId:this.props.location.state.courseId,
+})
+
+console.log(this.props.location.state.courseId);
+
+
+}
 
   handleToggleDropdownMenu = () => {
     let newState = Object.assign({}, this.state);
@@ -41,7 +53,7 @@ class Assignment extends Component {
         <Grid padded className="tablet computer only">
           <Menu borderless inverted fluid fixed="top">
             <Menu.Item header as="a">
-              Project name
+            <Image style={{ maxWidth: '40px', paddingRight: '5px' }} src='https://react.semantic-ui.com/logo.png' />iGroup Assignment
             </Menu.Item>
             <Menu.Menu position="right">
               <Menu.Item>
@@ -105,15 +117,7 @@ class Assignment extends Component {
               <Menu.Item as="a">Analytics</Menu.Item>
               <Menu.Item as="a">Export</Menu.Item>
               <Divider hidden />
-              <Menu.Item as="a">Nav item</Menu.Item>
-              <Menu.Item as="a">Nav item again</Menu.Item>
-              <Menu.Item as="a">One more nav</Menu.Item>
-              <Menu.Item as="a">Another nav item</Menu.Item>
-              <Menu.Item as="a">More navigation</Menu.Item>
-              <Divider hidden />
-              <Menu.Item as="a">Macintoch</Menu.Item>
-              <Menu.Item as="a">Linux</Menu.Item>
-              <Menu.Item as="a">Windows</Menu.Item>
+
             </Menu>
           </Grid.Column>
           <Grid.Column
@@ -126,20 +130,32 @@ class Assignment extends Component {
             <Grid>
               <Grid.Row>
                 <Breadcrumb>
-    <Breadcrumb.Section style={{paddingLeft:'10px'}} link>  COSC 2321</Breadcrumb.Section>
+    <Breadcrumb.Section style={{paddingLeft:'10px', paddingTop:'10px'}} link>  COSC 2321</Breadcrumb.Section>
     <Breadcrumb.Divider />
     <Breadcrumb.Section link>Assignments</Breadcrumb.Section>
   </Breadcrumb>
               </Grid.Row>
+              <Header dividing size="huge" as="h1">
+                  Cloud Computing Assignments
+                </Header>
               <div style={{clear:'both', width:'100%'}}>
 
-              <Table unstackable fluid>
+              <Table unstackable>
 
     <Table.Body>
       <Table.Row>
         <Table.Cell>    <List.Item>
-          <Link to="rating">
-  <List.Header as='a'>1. IOT / Project</List.Header>
+          <Link to="rating"
+           to={{
+            pathname: "/rating",
+            data: this.state, // your data array of objects
+            state: {
+              courseId:'5d3c893e40153fab1ced3111'
+            }
+          }}
+
+          >
+  <List.Header>1. Cloud Computing Assignment 1 </List.Header>
   </Link>
   <br></br>
   <Label size='small' color='red' pointing='right'>
@@ -150,9 +166,9 @@ class Assignment extends Component {
 
       </Table.Row>
       <Table.Row>
-        <Table.Cell> <List.Item as='a'>
+        <Table.Cell> <List.Item >
         <Link to="rating">
-  <List.Header as='a'>2. Data Analysis/ Project</List.Header>
+  <List.Header >2. Data Analysis Cloud Computing Assignment 2</List.Header>
   </Link><br></br>
   <Label  size='small' color='red' pointing='right'>
         Due
@@ -164,7 +180,7 @@ class Assignment extends Component {
       <Table.Row>
         <Table.Cell> <List.Item>
         <Link to="rating">
-  <List.Header as='a'>3. Semantic-Org/ Project</List.Header>
+  <List.Header >3. Semantic-Org/ Cloud Computing Assignment 3</List.Header>
   </Link><br></br>
   <Label  size='small' color='red' pointing='right'>
         Due
