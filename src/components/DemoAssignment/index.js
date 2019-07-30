@@ -138,13 +138,9 @@ console.log(this.props.location.state.courseId);
               <Header dividing size="huge" as="h1">
                   Cloud Computing Assignments
                 </Header>
-              <div style={{clear:'both', width:'100%'}}>
-
-              <Table unstackable>
-
-    <Table.Body>
-      <Table.Row>
-        <Table.Cell>    <List.Item>
+              <div style={{width:'100%'}}>
+              <List divided relaxed>
+   <List.Item>
           <Link to="rating"
            to={{
             pathname: "/rating",
@@ -155,44 +151,45 @@ console.log(this.props.location.state.courseId);
           }}
 
           >
-  <List.Header>1. Cloud Computing Assignment 1 </List.Header>
+  <List> 1. Cloud Computing Assignment 1 <Label size='small' color='red' pointing='left'>
+        Due 22/07/19
+      </Label> </List>
   </Link>
-  <br></br>
-  <Label size='small' color='red' pointing='right'>
-        Due
-      </Label> <List.Description as='a'> 22/07/19</List.Description>
+</List.Item>
+<List.Item>
+          <Link to="rating"
+           to={{
+            pathname: "/rating",
+            data: this.state, // your data array of objects
+            state: {
+              courseId:'5d3c893e40153fab1ced3111'
+            }
+          }}
 
-</List.Item></Table.Cell>
+          >
+  <List> 1. Cloud Computing Assignment 2 <Label size='small' color='red' pointing='left'>
+        Due 30/07/19
+      </Label> </List>
+  </Link>
+</List.Item>
+   <List.Item>
+          <Link to="rating"
+           to={{
+            pathname: "/rating",
+            data: this.state, // your data array of objects
+            state: {
+              courseId:'5d3c893e40153fab1ced3111'
+            }
+          }}
 
-      </Table.Row>
-      <Table.Row>
-        <Table.Cell> <List.Item >
-        <Link to="rating">
-  <List.Header >2. Data Analysis Cloud Computing Assignment 2</List.Header>
-  </Link><br></br>
-  <Label  size='small' color='red' pointing='right'>
-        Due
-      </Label> <List.Description as='a'> 28/07/19</List.Description>
+          >
+  <List> 1. Cloud Computing Assignment 3 <Label size='small' color='red' pointing='left'>
+        Due 03/08/19
+      </Label> </List>
+  </Link>
+</List.Item>
 
-</List.Item></Table.Cell>
-
-      </Table.Row>
-      <Table.Row>
-        <Table.Cell> <List.Item>
-        <Link to="rating">
-  <List.Header >3. Semantic-Org/ Cloud Computing Assignment 3</List.Header>
-  </Link><br></br>
-  <Label  size='small' color='red' pointing='right'>
-        Due
-      </Label> <List.Description as='a'> 30/07/19</List.Description>
-
-</List.Item></Table.Cell>
-
-      </Table.Row>
-    </Table.Body>
-  </Table>
-
-              <List divided relaxed>
+              
   </List>
               {/* <Grid.Row>
               <List.Item>

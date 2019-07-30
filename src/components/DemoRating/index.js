@@ -139,8 +139,8 @@ class Ratings extends Component{
 
     </div>
     <h3>Project Formation Requirements * </h3><hr/>
-    <h4 className='header'>Rate your skills : </h4>
-    <div className='ratingSkills'><SkillComponent /> 
+    <h4 >Rate your skills : </h4>
+    <div><SkillComponent /> 
     <Link
 to={{
 pathname: "/questions",
