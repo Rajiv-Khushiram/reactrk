@@ -5,7 +5,7 @@
 
 This project addresses student **Group/Team formation** for assignments at all educational level.
 The purpose is to ensure that groups formed are relevant to their skill sets in order to maximise team learning opportunities among team members.
-This is achieved in a simple 3 process:
+This is achieved in 3 simple steps:
 1. Teachers/Lecturers define the set of skills required to complete the assignments, team formation date and releases it to the students . 
 2. The students rate themselves for the required skill/s and submit their ratings.
 3. Students notified of group team members on fteam formation date. 
