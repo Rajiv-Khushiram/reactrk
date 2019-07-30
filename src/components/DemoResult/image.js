@@ -5,16 +5,16 @@ import ButtonExamplePositive from './button.js';
 
 const HeaderExampleImage = () => (
   <Header as='h2'>
-    <Image circular src={require('./images/download.png')} /> Patrick 
+    <Image circular src={require('./images/download.png')} /> Rajiv 
     <ButtonExamplePositive />
     <br/>
-    <Image cicular src={require('./images/girl.jpg')} /> Thuy
+    <Image cicular src={require('./images/girl.jpg')} /> Rashil
     <ButtonExamplePositive />
     <br/>
-    <Image cicular src={require('./images/kid_boy-512.png')} /> Lumi
+    <Image cicular src={require('./images/kid_boy-512.png')} /> Thuy
     <ButtonExamplePositive />
     <br/>
-    <Image cicular src={require('./images/anothergirl.png')} /> Veronica
+    <Image cicular src={require('./images/anothergirl.png')} /> Trung
     <ButtonExamplePositive />
     
   </Header>

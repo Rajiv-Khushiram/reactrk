@@ -32,7 +32,7 @@ class LoginForm extends Component{
    if(email && password){
        this.setState( {object: {email: email.value, password: password.value}})
    }
-   if(this.state.object.email === "s123456@gmail.com" && this.state.object.password === "hackathon"){
+   if(this.state.object.email === "admin" && this.state.object.password === "admin"){
        window.location.href = "/dashboard";
    }
    else{ 
@@ -65,14 +65,14 @@ class LoginForm extends Component{
        <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
          <Grid.Column style={{ maxWidth: 450 }}>
          <Header as='h2' color='teal' textAlign='center'>
-           <Image src='https://react.semantic-ui.com/logo.png' /> Log-in to your account
+           <Image src='https://react.semantic-ui.com/logo.png' /> iGroup Assignment Login
          </Header>
          <Form size='large'>
            <Segment stacked>
              <Form.Input
                fluid icon='user'
                iconPosition='left'
-               placeholder='E-mail address'
+               placeholder='admin'
                id="email"
                value={this.state.email}
                onChange={this.handleChange}
@@ -82,7 +82,7 @@ class LoginForm extends Component{
                icon='lock'
                id="password"
                iconPosition='left'
-               placeholder='Password'
+               placeholder='admin'
                type='password'
                value={this.state.password}
                onChange={this.handleChange}

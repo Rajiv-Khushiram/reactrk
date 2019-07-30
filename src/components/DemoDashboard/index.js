@@ -12,6 +12,7 @@ import {
   Image,
   Label,
   Menu,
+  Breadcrumb,
   Table
 } from "semantic-ui-react";
  import './index.css'
@@ -116,6 +117,11 @@ class Dashboard extends Component {
           >
             <Grid padded>
               <Grid.Row>
+              <Breadcrumb>
+    <Breadcrumb.Section style={{paddingLeft:'10px', paddingTop:'10px'}} link>  Dashboard</Breadcrumb.Section>
+    <Breadcrumb.Divider />
+
+  </Breadcrumb>
                 <Header dividing size="huge" as="h1">
                   Courses
                 </Header>

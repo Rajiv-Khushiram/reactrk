@@ -7,6 +7,7 @@ import {
   Header,
   Icon,
   Input,
+  Image,
   Breadcrumb,
   Label,
   Menu,
@@ -44,65 +45,66 @@ class Questions extends Component {
   }
 
 
-  // handleToggleDropdownMenu = () => {
-  //   let newState = Object.assign({}, this.state);
-  //   if (newState.dropdownMenuStyle.display === "none") {
-  //     newState.dropdownMenuStyle = { display: "flex" };
-  //   } else {
-  //     newState.dropdownMenuStyle = { display: "none" };
-  //   }
+  handleToggleDropdownMenu = () => {
+    let newState = Object.assign({}, this.state);
+    if (newState.dropdownMenuStyle.display === "none") {
+      newState.dropdownMenuStyle = { display: "flex" };
+    } else {
+      newState.dropdownMenuStyle = { display: "none" };
+    }
 
-  //   this.setState(newState);
-  // };
+    this.setState(newState);
+  };
 
 
 
   handleSubmit = () => {
 
-    const postData = {
-      assignmentId: '5d3c893e40153fab1ced3111',
-      studentId: '5d3c3f54fb94653a5c4a7403',
-      skillsRating: [{
-        skillName: 'MongoDb',
-        value: 3
-      }, {
-        skillName: 'Javascript',
-        value: 4
-      }, {
-        skillName: 'GCP',
-        value: 1
-      }],
-      mcqAnswers: [{
-        questionId: '5d3c893e40153fab1ced3113',
-        answer: 'A',
-      }, {
-        questionId: '5d3c893e40153fab1ced3113',
-        answer: 'B',
-      }, {
-        questionId: '5d3c893e40153fab1ced3113',
-        answer: 'C',
-      }]
-    };
+    // const postData = {
+    //   assignmentId: '5d3c893e40153fab1ced3111',
+    //   studentId: '5d3c3f54fb94653a5c4a7403',
+    //   skillsRating: [{
+    //     skillName: 'MongoDb',
+    //     value: 3
+    //   }, {
+    //     skillName: 'Javascript',
+    //     value: 4
+    //   }, {
+    //     skillName: 'GCP',
+    //     value: 1
+    //   }],
+    //   mcqAnswers: [{
+    //     questionId: '5d3c893e40153fab1ced3113',
+    //     answer: 'A',
+    //   }, {
+    //     questionId: '5d3c893e40153fab1ced3113',
+    //     answer: 'B',
+    //   }, {
+    //     questionId: '5d3c893e40153fab1ced3113',
+    //     answer: 'C',
+    //   }]
+    // };
 
-    console.log(JSON.stringify(postData));
+    // console.log(JSON.stringify(postData));
 
-    let headers = new Headers({
-      'Content-Type': 'application/json'
-    });
+    // let headers = new Headers({
+    //   'Content-Type': 'application/json'
+    // });
 
-    console.log('do fetch');
+    // console.log('do fetch');
 
-    fetch("https://cerealkillers-api.herokuapp.com/api/v1/answer", {
-      method: 'post',
-      body: JSON.stringify(postData),
-      headers: headers
-    })
-      .then(resp => {
-        console.log(resp);
-        if(resp.status === 201)
-        window.location.href="/success";
-      })
-  };
+    // fetch("https://cerealkillers-api.herokuapp.com/api/v1/answer", {
+    //   method: 'post',
+    //   body: JSON.stringify(postData),
+    //   headers: headers
+    // })
+    //   .then(resp => {
+    //     console.log(resp);
+    //     if(resp.status === 201)
+    //     window.location.href="/success";
+    //   })
+    window.location.href="/success";
+  }
 
   render() {
     return (
@@ -110,7 +112,7 @@ class Questions extends Component {
         <Grid padded className="tablet computer only">
           <Menu borderless inverted fluid fixed="top">
             <Menu.Item header as="a">
-              Project name
+            <Image style={{maxWidth:'40px', paddingRight:'5px'}} src='https://react.semantic-ui.com/logo.png' />iGroup Assignment
               </Menu.Item>
             <Menu.Menu position="right">
               <Menu.Item>
@@ -174,15 +176,7 @@ class Questions extends Component {
               <Menu.Item as="a">Analytics</Menu.Item>
               <Menu.Item as="a">Export</Menu.Item>
               <Divider hidden />
-              <Menu.Item as="a">Nav item</Menu.Item>
-              <Menu.Item as="a">Nav item again</Menu.Item>
-              <Menu.Item as="a">One more nav</Menu.Item>
-              <Menu.Item as="a">Another nav item</Menu.Item>
-              <Menu.Item as="a">More navigation</Menu.Item>
-              <Divider hidden />
-              <Menu.Item as="a">Macintoch</Menu.Item>
-              <Menu.Item as="a">Linux</Menu.Item>
-              <Menu.Item as="a">Windows</Menu.Item>
+              
             </Menu>
           </Grid.Column>
           <Grid.Column
@@ -194,12 +188,12 @@ class Questions extends Component {
           >
             <Grid>
               <Grid.Row>
-                <Breadcrumb style={{ paddingLeft: '10px' }}>
+                <Breadcrumb style={{ paddingLeft: '10px', paddingTop: '10px' }}>
                   <Breadcrumb.Section link>  COSC 2321</Breadcrumb.Section>
                   <Breadcrumb.Divider />
                   <Breadcrumb.Section link>Assignments</Breadcrumb.Section>
                   <Breadcrumb.Divider />
-                  <Breadcrumb.Section link>IOT: Medical Appointment System</Breadcrumb.Section>
+                  <Breadcrumb.Section link>Cloud Computing Part A</Breadcrumb.Section>
 
                 </Breadcrumb>
                 <Header style={{ paddingTop: '10px', width: '90%', margin: 'auto' }} size="medium">
@@ -209,23 +203,15 @@ class Questions extends Component {
               </Grid.Row>
               <div style={{ clear: 'both', width: '100%' }}>
                 <Container fluid>
-                  <Header as='h2' style={{ color: 'red' }}>Medical Appointment System</Header>
-                  <p>
-                    Domestic dogs inherited complex behaviors, such as bite inhibition, from their wolf
-                    ancestors, which would have been pack hunters with complex body language. These
-                    sophisticated forms of social cognition and communication may account for their
-                    trainability, playfulness, and ability to fit into human households and social situations,
-                    and these attributes have given dogs a relationship with humans that has enabled them to
-                    become one of the most successful species on the planet today.
-      </p>
-                  <p>
-                    The dogs' value to early human hunter-gatherers led to them quickly becoming ubiquitous
-                    across world cultures. Dogs perform many roles for people, such as hunting, herding, pulling
-                    loads, protection, assisting police and military, companionship, and, more recently, aiding
-                    handicapped individuals. This impact on human society has given them the nickname "man's
-                    best friend" in the Western world. In some cultures, however, dogs are also a source of
-                    meat.
-      </p>
+                <div>
+     <h1>Assignment 1: Cloud Computing Part A (30%)</h1></div>
+    <hr/>
+    <div>
+        <p> Due date: 27 June by 20:29 Points: 8500 Submission: None</p>
+        <p>  Not funny Thuy !!  What the hell is this? Text me 0481187062 to give you my Resume! Thuy that la hai huoc va xinh dep nua hihi. Hi vong giam khao se cham bai nay diem that caoooooo
+             Inquietude simplicity terminated she compliment remarkably few her nay. The weeks are ham asked jokes. Neglected perceived shy nay concluded. Not mile draw plan snug next all. </p>
+
+    </div>
                 </Container>
                 <br></br>
                 <br>
@@ -256,14 +242,7 @@ class Questions extends Component {
                         name='checkboxRadioGroup'
                       />
                     </Form.Field>
-                    <Form.Field>
-                      <Checkbox
-                        radio
-                        label='OOPs Features'
-                        name='checkboxRadioGroup'
-                      />
-                    </Form.Field>
-                    <Form.Field>
+                                        <Form.Field>
                       <Checkbox
                         radio
                         label='Polymorphism'
@@ -287,13 +266,7 @@ class Questions extends Component {
                         name='checkboxRadioGroup'
                       />
                     </Form.Field>
-                    <Form.Field>
-                      <Checkbox
-                        radio
-                        label='Execution of Constructor or Destructor'
-                        name='checkboxRadioGroup'
-                      />
-                    </Form.Field>
+              
                     <Form.Field>
                       <Checkbox
                         radio
@@ -318,13 +291,7 @@ class Questions extends Component {
                         name='checkboxRadioGroup'
                       />
                     </Form.Field>
-                    <Form.Field>
-                      <Checkbox
-                        radio
-                        label='Access Specifiers'
-                        name='checkboxRadioGroup'
-                      />
-                    </Form.Field>
+              
                     <Form.Field>
                       <Checkbox
                         radio
@@ -332,39 +299,9 @@ class Questions extends Component {
                         name='checkboxRadioGroup'
                       />
                     </Form.Field>
-                    <Form.Field>
-                      Question 4: <p className="questionTitle">The section contains questions on constructors and its types, copy constructor, overloading constructors, destructors, execution of constructor or destructor.</p>
-                    </Form.Field>
-                    <Form.Field>
-                      <Checkbox
-                        radio
-                        label='Copy Constructor'
-                        name='checkboxRadioGroup'
-                      />
-                    </Form.Field>
-                    <Form.Field>
-                      <Checkbox
-                        radio
-                        label='Types of Constructors'
-                        name='checkboxRadioGroup'
-                      />
-                    </Form.Field>
-                    <Form.Field>
-                      <Checkbox
-                        radio
-                        label='Execution of Constructor or Destructor'
-                        name='checkboxRadioGroup'
-                      />
-                    </Form.Field>
-                    <Form.Field>
-                      <Checkbox
-                        radio
-                        label='Overloading Constructors'
-                        name='checkboxRadioGroup'
-                      />
-                    </Form.Field>
-
-                    <Button type="primary">Submit</Button>
+               
+                    <br></br>
+                    <Button primary>Submit</Button>
                   </Form>
 
                 </Grid.Row>

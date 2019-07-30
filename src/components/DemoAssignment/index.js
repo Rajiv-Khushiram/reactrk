@@ -13,7 +13,8 @@ import {
   Label,
   Menu,
   Table,
-  List
+  List,
+  Image
 } from "semantic-ui-react";
  import './index.css'
 
@@ -32,11 +33,6 @@ componentDidMount() {
 
 console.log(this.props.location.state.courseId);
 
-
-
-fetch('https://cerealkillers-api.herokuapp.com/api/v1/assignment/5d3c893e40153fab1ced3111 ')
-      .then(response => console.log(response.json()))
-      .then(data => this.setState({ data }));
 
 }
 
@@ -57,7 +53,7 @@ fetch('https://cerealkillers-api.herokuapp.com/api/v1/assignment/5d3c893e40153fa
         <Grid padded className="tablet computer only">
           <Menu borderless inverted fluid fixed="top">
             <Menu.Item header as="a">
-              Project name
+            <Image style={{ maxWidth: '40px', paddingRight: '5px' }} src='https://react.semantic-ui.com/logo.png' />iGroup Assignment
             </Menu.Item>
             <Menu.Menu position="right">
               <Menu.Item>
@@ -134,11 +130,14 @@ fetch('https://cerealkillers-api.herokuapp.com/api/v1/assignment/5d3c893e40153fa
             <Grid>
               <Grid.Row>
                 <Breadcrumb>
-    <Breadcrumb.Section style={{paddingLeft:'10px'}} link>  COSC 2321</Breadcrumb.Section>
+    <Breadcrumb.Section style={{paddingLeft:'10px', paddingTop:'10px'}} link>  COSC 2321</Breadcrumb.Section>
     <Breadcrumb.Divider />
     <Breadcrumb.Section link>Assignments</Breadcrumb.Section>
   </Breadcrumb>
               </Grid.Row>
+              <Header dividing size="huge" as="h1">
+                  Cloud Computing Assignments
+                </Header>
               <div style={{clear:'both', width:'100%'}}>
 
               <Table unstackable>
@@ -156,7 +155,7 @@ fetch('https://cerealkillers-api.herokuapp.com/api/v1/assignment/5d3c893e40153fa
           }}
 
           >
-  <List.Header>1. IOT / Project</List.Header>
+  <List.Header>1. Cloud Computing Assignment 1 </List.Header>
   </Link>
   <br></br>
   <Label size='small' color='red' pointing='right'>
@@ -169,7 +168,7 @@ fetch('https://cerealkillers-api.herokuapp.com/api/v1/assignment/5d3c893e40153fa
       <Table.Row>
         <Table.Cell> <List.Item >
         <Link to="rating">
-  <List.Header >2. Data Analysis/ Project</List.Header>
+  <List.Header >2. Data Analysis Cloud Computing Assignment 2</List.Header>
   </Link><br></br>
   <Label  size='small' color='red' pointing='right'>
         Due
@@ -181,7 +180,7 @@ fetch('https://cerealkillers-api.herokuapp.com/api/v1/assignment/5d3c893e40153fa
       <Table.Row>
         <Table.Cell> <List.Item>
         <Link to="rating">
-  <List.Header >3. Semantic-Org/ Project</List.Header>
+  <List.Header >3. Semantic-Org/ Cloud Computing Assignment 3</List.Header>
   </Link><br></br>
   <Label  size='small' color='red' pointing='right'>
         Due
