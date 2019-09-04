@@ -24,6 +24,10 @@ class Result extends Component {
         }
     };
 
+    logout = () => {
+        window.location.href = "/";
+      }
+
     render() {
         return (
             <div className="App">
@@ -39,7 +43,7 @@ class Result extends Component {
                             <Menu.Item as="a">Dashboard</Menu.Item>
                             <Menu.Item as="a">Settings</Menu.Item>
                             <Menu.Item as="a">Profile</Menu.Item>
-                            <Menu.Item as="a">Help</Menu.Item>
+                            <Menu.Item as="a" onClick={this.logout}>Logout</Menu.Item>
                         </Menu.Menu>
                     </Menu>
                 </Grid>
