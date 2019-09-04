@@ -32,7 +32,7 @@ class LoginForm extends Component{
    if(email && password){
        this.setState( {object: {email: email.value, password: password.value}})
    }
-   if(this.state.object.email === "admin" && this.state.object.password === "admin"){
+   if(this.state.object.email === "" && this.state.object.password === ""){
        window.location.href = "/dashboard";
    }
    else{ 
